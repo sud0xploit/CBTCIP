@@ -41,14 +41,14 @@ public class ChatServer {
                 in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 out = new PrintWriter(socket.getOutputStream(), true);
 
-                // Add the new client's writer to the set so we can broadcast messages.
+  // Add the new client's writer to the set so we can broadcast messages.
                 synchronized (clientWriters) {
                     clientWriters.add(out);
                 }
                 
                 System.out.println("A client has connected.");
 
-                // Accept messages from this client and broadcast them.
+  // Accept messages from this client and broadcast them.
                 String message;
                 while ((message = in.readLine()) != null) {
                     synchronized (clientWriters) {
@@ -60,7 +60,7 @@ public class ChatServer {
             } catch (IOException e) {
                 System.out.println("A client has disconnected.");
             } finally {
-                // When the client disconnects, remove their writer and close the socket.
+ // When the client disconnects, remove their writer and close the socket.
                 if (out != null) {
                     synchronized (clientWriters) {
                         clientWriters.remove(out);
