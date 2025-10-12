@@ -1,6 +1,4 @@
-/**
- * Represents a single book with a title and an author.
- */
+
 public class Book {
     private String title;
     private String author;

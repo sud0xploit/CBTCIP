@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class Library {
 
     private List<Book> catalog;
@@ -14,14 +13,14 @@ public class Library {
     }
 
     public static void main(String[] args) {
-        // Create a Library instance and run the application
+  // Create a Library instance and run the application
         Library library = new Library();
         library.run();
     }
 
-    /**
-     * The main loop of the application that displays the menu and handles user input.
-     */
+  
+ //The main loop of the application that displays the menu and handles user input.
+    
     public void run() {
         while (true) {
             printMenu();
@@ -40,11 +39,11 @@ public class Library {
                 case 4:
                     System.out.println("Thank you for using the Library Catalog. Goodbye!");
                     scanner.close();
-                    return; // Exit the application
+                    return; 
                 default:
                     System.out.println("Invalid choice. Please enter a number between 1 and 4.");
             }
-            System.out.println(); // Add a newline for better readability
+            System.out.println(); 
         }
     }
 
@@ -63,13 +62,11 @@ public class Library {
         try {
             return Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e) {
-            return -1; // Return an invalid choice
+            return -1; 
         }
     }
 
-    /**
-     * Prompts the user for a book's title and author, then adds it to the catalog.
-     */
+    //  Prompts the user for a book's title and author, then adds it to the catalog.
     private void addBook() {
         System.out.print("Enter the book title: ");
         String title = scanner.nextLine();
@@ -80,9 +77,8 @@ public class Library {
         System.out.println("Book added successfully!");
     }
 
-    /**
-     * Searches the catalog by title or author based on a user's search term.
-     */
+    //   Searches the catalog by title or author based on a user's search term.
+    
     private void searchBooks() {
         System.out.print("Enter search term (title or author): ");
         String searchTerm = scanner.nextLine().toLowerCase();
@@ -105,9 +101,8 @@ public class Library {
         }
     }
 
-    /**
-     * Displays all the books currently in the catalog.
-     */
+    // Displays all the books currently in the catalog.
+    
     private void listAllBooks() {
         if (catalog.isEmpty()) {
             System.out.println("The catalog is currently empty.");

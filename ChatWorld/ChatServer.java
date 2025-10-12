@@ -69,7 +69,7 @@ public class ChatServer {
                 try {
                     socket.close();
                 } catch (IOException e) {
-                    // Ignore
+                   
                 }
             }
         }
